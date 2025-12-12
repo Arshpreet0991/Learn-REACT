@@ -4,6 +4,7 @@ import MultipleProps from "./components/MultipleProps";
 import PassingNumbers from "./components/PassingNumbers";
 import ArrayProps from "./components/ArrayProps";
 import ObjectsProps from "./components/ObjectProps";
+import RenderArrayWithMaps from "./components/RenderArrayWithMaps";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
       <ArrayProps arrayOfNumbers={[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]} />
       <ObjectsProps myObj={{ fName: "Kazuya", lName: "Mishima" }} />{" "}
       {/* Notice the double {{ }}. The outer one is to tell the react that we are working inside JS, and the inside { } is the JS object itself */}
+      {""}
+      <RenderArrayWithMaps colors={["red", "green", "blue"]} />{" "}
+      {/* we want to display the lists of color in a bullet list */}
     </>
   );
 }
