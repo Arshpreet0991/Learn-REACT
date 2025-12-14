@@ -3,10 +3,10 @@ import ShoppingList from "./components/ShoppingList";
 
 function App() {
   const data = [
-    { item: "eggs", quantity: 12, isCompleted: true },
-    { item: "Milk", quantity: 2, isCompleted: false },
-    { item: "Bread", quantity: 1, isCompleted: true },
-    { item: "Butter", quantity: 3, isCompleted: false },
+    { id: 1, item: "eggs", quantity: 12, isCompleted: true },
+    { id: 2, item: "Milk", quantity: 2, isCompleted: false },
+    { id: 3, item: "Bread", quantity: 1, isCompleted: true },
+    { id: 4, item: "Butter", quantity: 3, isCompleted: false },
   ];
 
   return (
