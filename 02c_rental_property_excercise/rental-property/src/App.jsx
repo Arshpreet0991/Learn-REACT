@@ -1,5 +1,6 @@
 import "./App.css";
 import PropertiesList from "./components/PropertiesList";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   const rentalProperties = [
@@ -35,9 +36,38 @@ function App() {
     },
   ];
 
+  const todoList = [
+    {
+      id: 1,
+      task: "Buy groceries",
+      isCompleted: false,
+    },
+    {
+      id: 2,
+      task: "Finish React homework",
+      isCompleted: true,
+    },
+    {
+      id: 3,
+      task: "Go to the gym",
+      isCompleted: false,
+    },
+    {
+      id: 4,
+      task: "Call parents",
+      isCompleted: true,
+    },
+    {
+      id: 5,
+      task: "Clean the apartment",
+      isCompleted: false,
+    },
+  ];
+
   return (
     <>
       <PropertiesList rentalProperties={rentalProperties} />
+      <ToDoList list={todoList} />
     </>
   );
 }
