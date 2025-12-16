@@ -1,39 +1,32 @@
 import { useState } from "react";
 import ColorBox from "./components/ColorBox";
+import BoxRange from "./components/BoxRange";
 import "./App.css";
-
-const colorList = [
-  { name: "red-500", hex: "#EF4444" },
-  { name: "green-500", hex: "#22C55E" },
-  { name: "blue-500", hex: "#3B82F6" },
-  { name: "yellow-500", hex: "#EAB308" },
-  { name: "purple-500", hex: "#A855F7" },
-  { name: "pink-500", hex: "#EC4899" },
-  { name: "indigo-500", hex: "#6366F1" },
-  { name: "gray-500", hex: "#6B7280" },
-  { name: "orange-500", hex: "#F97316" },
-  { name: "teal-500", hex: "#14B8A6" },
-];
+import CreateBoxes from "./components/CreateBoxes";
 
 function App() {
+  const colorList = [
+    "#EF4444",
+    "#22C55E",
+    "#3B82F6",
+    "#EAB308",
+    "#A855F7",
+    "#EC4899",
+    "#6366F1",
+    "#6B7280",
+    "#F97316",
+    "#14B8A6",
+  ];
+
+  const [range, setRange] = useState(3);
+
   return (
     <>
-      <div className="flex">
-        <div>
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-        </div>
-        <div>
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-        </div>
-        <div>
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-          <ColorBox colorList={colorList} />
-        </div>
+      <div>
+        <BoxRange range={range} setRange={setRange} />
+      </div>
+      <div className="flex flex-wrap">
+        <CreateBoxes range={range} />
       </div>
     </>
   );

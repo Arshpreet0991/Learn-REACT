@@ -1,15 +1,16 @@
 import { useState } from "react";
 
+// a function which takes in an array and return a random element
+const randomChoice = (arr) => {
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
+};
+
 export default function ColorBox({ colorList }) {
+  const [color, setColor] = useState(randomChoice(colorList));
   const colorChanger = () => {
-    const randomIndex = Math.floor(Math.random() * colorList.length);
-    const randomColor = colorList[randomIndex].hex;
-    console.log(randomColor);
-
-    setColor(randomColor);
+    setColor(randomChoice(colorList));
   };
-
-  const [color, setColor] = useState("#EF4444");
 
   return (
     <>
