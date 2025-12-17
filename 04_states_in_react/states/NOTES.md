@@ -36,7 +36,7 @@ export default function Counter() {
 - Here, the function counter(which is a component) is executed, and the value of state variable count is 0.
 - then in the return statement, when the button is clicked, setCount(15) is called. This schedules the state variable count = 15, **BUT ONLY ON NEXT RENDER.**
 - Now, since the setCount was called after clicking the button, this triggers a re-render.
-- Now the function is again executed line by line, but when the code reaches **const [count, setCount]= useState(0)**, count is not assigned the default value, it is now assigned 15.
+- Now the function is again executed line by line, but when the code reaches **const [count, setCount]= useState(0)**, count is not assigned the default value, it is now assigned 15. This is when the value of count gets updated. On the next re-render. Before this, the value of count of is not updated.** Very Important: value of the state variables changes on the next render.**
 - **_State values are frozen during a render. They never change until the next render happens._**
 
 ## rendering in Batches
@@ -88,4 +88,4 @@ setCount((prev) => prev + 1);
 setCount((prev) => prev + 1);
 ```
 
-- Here, prev contains the latest value, which is not yet rendered.
+- Very Important: So whenver we needs to update the state based on the current value of state, we use the above syntax. It guarantees us that our value is updated and not lost during the batch rendering.
