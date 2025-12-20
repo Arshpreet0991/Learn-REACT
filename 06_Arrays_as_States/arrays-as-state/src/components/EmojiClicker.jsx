@@ -8,10 +8,20 @@ export default function EmojiClicker() {
     setEmoji((prevEmoji) => [...prevEmoji, { id: uuid(), emoji: "😭" }]);
   };
 
+  const deleteEmoji = (id) => {
+    setEmoji((prevEmoji) => {
+      return prevEmoji.filter((element) => element.id != id);
+    });
+  };
+
   return (
     <>
       {emoji.map((e) => (
-        <span key={e.id} style={{ fontSize: 50 }}>
+        <span
+          onClick={() => deleteEmoji(e.id)}
+          key={e.id}
+          style={{ fontSize: 50 }}
+        >
           {e.emoji}
         </span>
       ))}
