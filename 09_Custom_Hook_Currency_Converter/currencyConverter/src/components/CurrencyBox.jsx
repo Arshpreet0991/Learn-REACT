@@ -9,6 +9,7 @@ export default function CurrencyBox() {
   const [convertedAmount, setConvertedAmount] = useState(0);
 
   const currencyInfo = useCurrencyInfo(fromCurrency);
+  console.log(currencyInfo);
 
   // since we only need keys to display in the currency options
   const options = Object.keys(currencyInfo);
