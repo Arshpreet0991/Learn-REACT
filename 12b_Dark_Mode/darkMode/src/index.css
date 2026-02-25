@@ -1,9 +1,10 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
+  background-color: #1a1a1a;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: #1a1a1a;
 }

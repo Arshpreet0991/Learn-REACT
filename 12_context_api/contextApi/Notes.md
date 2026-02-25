@@ -168,4 +168,4 @@ function Profile() {
 - Create a Provider wrapper that holds the data and wraps the components that need access to it (`UserContextProvider`)
 - In your app, wrap the components that need access to the shared data inside the Provider wrapper (`App.jsx`)
 - To **update** shared data, use `useContext()` to grab the setter function and call it with the new data
-- To **read** shared data, use `useContext()` to grab the data and use it in your component
+- To **read** shared data, use `useContext()` to grab the data and use it in your componen
