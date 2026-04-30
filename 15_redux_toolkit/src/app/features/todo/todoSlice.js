@@ -1,5 +1,4 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit"; // nano id to generate unique id
-import { act } from "react";
 
 // initial state of the store; can be object or array, intial state is a keyword
 const initialState = {
@@ -19,11 +18,10 @@ export const todoSlice = createSlice({
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
     updateTodo: (state, action) => {
-      state.todos = state.todos.map((todo) =>
-        todo.id === action.payload.id
-          ? { ...todo, text: action.payload.text }
-          : todo,
-      );
+      const todo = state.todos.find((t) => t.id === action.payload.id);
+      if (todo) {
+        todo.text = action.payload.text;
+      }
     },
   }, // properties and function
 });
